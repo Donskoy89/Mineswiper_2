@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="start_menu">
+        <form class="form" action="/" method="GET">
+            <label class="form__item" for="cols">
+                <div class="form__text">Ширина:</div>
+                <input class="form__input" type="number" min="1" max="30" id="cols" value="15" placeholder="Введите ширину"> ячеек
+            </label>
+            <label class="form__item" for="rows">
+                <div class="form__text">Высота:</div>
+                <input class="form__input" type="number" min="1" max="30" id="rows" value="15" placeholder="Введите высоту"> ячеек 
+            </label>
+            <label class="form__item" for="bombs">
+                <div class="form__text">Приблизительное кол-во бомб:</div>
+                <input class="form__input" type="number" min="1" max="30" id="bombs" value="10" placeholder="Введите кол-во бомб"> в %
+            </label>
+            <button class="btn" id="startGame" type="button">Start</button>
+        </form>
+    </div>
+    <h1 class="title">Mineswiper 2</h1>
+    <div class="wrapper">
+        <div id="root">
+            <div class="end-screen">Game over<div class="info-restart">press f5 to restart</div></div>
+        </div>
+        <div class="panel">
+            bombs: <span id="bombCount">0</span><br>
+            timer: <span id="min">0</span> : <span id="sec">0</span><br>
+            record: <span id="record"></span>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal__inner">
+            <h1>You Win!</h1>
+            your time: <span id="win-time"></span>
+            <button class="btn" id="resetGame" type="button">Restart</button>
+        </div>
+    </div>
+    
+    <script src="src/game.js"></script>
+    <script src="src/cell.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>
