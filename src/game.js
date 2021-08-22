@@ -289,13 +289,15 @@ class Game {
     }
 
     openCellsDirection(x, y) {
-        if (document.querySelector(`[data-x="${x}"][data-y="${y}"]`) != undefined) {
-            document.querySelector(`[data-x="${x}"][data-y="${y}"]`).classList.add('unhide');
+        const cell = document.querySelector(`[data-x="${x}"][data-y="${y}"]`);
 
-            if (document.querySelector(`[data-x="${x}"][data-y="${y}"]`).dataset.value === '0' && document.querySelector(`[data-x="${x}"][data-y="${y}"]`).dataset.checked === 'false') {
-                this.openEmptyCells(document.querySelector(`[data-x="${x}"][data-y="${y}"]`));
+        if (cell != undefined) {
+            cell.classList.add('unhide');
+
+            if (cell.dataset.value === '0' && cell.dataset.checked === 'false') {
+                this.openEmptyCells(cell);
             } else {
-                document.querySelector(`[data-x="${x}"][data-y="${y}"]`).dataset.checked = 'true';
+                cell.dataset.checked = 'true';
             }
         }
     }
